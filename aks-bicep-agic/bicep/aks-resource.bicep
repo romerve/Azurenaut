@@ -22,6 +22,8 @@ var tags = {
   projectCode: 'rvlabs'
 }
 var basePoolName = 'coro-NodePool'
+var agicSubnetPrefix = '10.22.115.0/24'
+var agicAppGwName = 'coro-agic'
 
 // Azure kubernetes service
 resource aks 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
@@ -66,10 +68,10 @@ resource aks 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
     }
     addonProfiles: {
       ingressApplicationGateway: {
-        enabled: true
+        enabled: false
         config: {
-          ApplicationGatewayName: 'coro-agic'
-          SubnetPrefix: '10.22.115.0/24'
+          ApplicationGatewayName: agicAppGwName
+          SubnetPrefix: agicSubnetPrefix
           WatchNamespace: 'default'
         }
       }
