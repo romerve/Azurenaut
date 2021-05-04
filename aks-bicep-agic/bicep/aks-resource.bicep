@@ -68,7 +68,7 @@ resource aks 'Microsoft.ContainerService/managedClusters@2021-03-01' = {
     }
     addonProfiles: {
       ingressApplicationGateway: {
-        enabled: false
+        enabled: true
         config: {
           ApplicationGatewayName: agicAppGwName
           SubnetPrefix: agicSubnetPrefix
