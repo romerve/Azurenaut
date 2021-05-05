@@ -12,4 +12,4 @@
 
 - Limited feature set compared to some other in-cluster options
 
-[<- Previous](04.md) - [Next ->](05.md)
+[<- Previous](addon-helm.md) - [Next ->](agic-demo.md)

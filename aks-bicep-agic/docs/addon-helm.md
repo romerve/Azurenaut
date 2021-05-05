@@ -12,4 +12,4 @@
   - AGIC with ProhibitedTargets can configure the Application Gateway to support AKS clusters without affecting other existing backends.
   - AGIC add-on doesn't currently support this.
 
-[<- Previous](02.md) - [Next ->](04.md)
+[<- Previous](agic-overview.md) - [Next ->](incluster-addon.md)

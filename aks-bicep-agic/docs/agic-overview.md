@@ -12,4 +12,4 @@
 
 ![ AGIC Architecture ](agic-arch.png)
 
-[<- Previous](01.md) - [Next ->](03.md)
+[<- Previous](agic-intro.md) - [Next ->](addon-helm.md)
