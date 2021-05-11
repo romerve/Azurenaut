@@ -5,7 +5,7 @@ metadata:
   name: rollout-bluegreen
   namespace: argocd
 spec:
-  replicas: 2
+  replicas: 3
   revisionHistoryLimit: 2
   selector:
     matchLabels:
