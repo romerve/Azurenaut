@@ -1,0 +1,29 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rollout-prod
+  namespace: argocd
+spec:
+  type: LoadBalancer
+  selector:
+    app: webapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rollout-preview
+  namespace: argocd
+spec:
+  type: LoadBalancer
+  selector:
+    app: webapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
