@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx-sample
-        image: nginx
+        image: httpd
         imagePullPolicy: Always
         ports:
         - containerPort: 80
