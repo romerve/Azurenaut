@@ -39,9 +39,16 @@ namespace WebPortal.Controllers
 
         private async Task GetToken()
         {
+            /* 
+                Acquires access token from cache if present, else gets it from AAD B2C.
+             */
             var accessToken = await _tokenAcquisition.GetAccessTokenForUserAsync(new[] { _WeatherApiScope });
             _logger.LogInformation($"access token: {accessToken.ToString()}");
 
+            /* 
+                Sets the Bearer header with the access token on the HTTP Client used to 
+                call the remote APIs
+             */
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
@@ -50,11 +57,6 @@ namespace WebPortal.Controllers
         public async Task<dynamic> GetEcho()
         {
             //await GetToken();
-
-            foreach (var claim in _contextAccessor.HttpContext.User.Claims)
-            {
-                _logger.LogInformation("@@@@@@@@ - " + claim.Value);
-            }
 
             var response = await _httpClient.GetAsync($"{_WeatherApiScopeUrl}/WeatherForecast/echo");
             if (response.StatusCode == HttpStatusCode.OK)

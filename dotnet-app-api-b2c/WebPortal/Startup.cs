@@ -26,6 +26,11 @@ namespace WebPortal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /* 
+                Configures Microsoft Identity Web: MIW is a set of ASP.NET Core libraries
+                to facilitate AuthN and AuthZ for apps and APIs. If you are only interested
+                on obtaining tokens, then use MSAL.NET
+             */
             services.AddMicrosoftIdentityWebAppAuthentication(Configuration, "Azure:AzureAdB2C")
                 .EnableTokenAcquisitionToCallDownstreamApi(new string[] { Configuration["ServiceApis:weatherApi:weatherApiScope"] })
                 .AddInMemoryTokenCaches();
