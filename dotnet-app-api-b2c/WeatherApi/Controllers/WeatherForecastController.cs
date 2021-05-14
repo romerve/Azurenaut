@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Web.Resource;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WeatherApi.Controllers
 {
@@ -23,6 +25,7 @@ namespace WeatherApi.Controllers
             _logger = logger;
         }
 
+        [Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -34,6 +37,12 @@ namespace WeatherApi.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet("echo")]
+        public dynamic echo()
+        {
+            return "Anon works";
         }
     }
 }

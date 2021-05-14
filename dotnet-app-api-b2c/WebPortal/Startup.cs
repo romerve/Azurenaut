@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.UI;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 
 namespace WebPortal
 {
@@ -23,7 +26,16 @@ namespace WebPortal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddMicrosoftIdentityWebAppAuthentication(Configuration, "Azure:AzureAdB2C")
+                .EnableTokenAcquisitionToCallDownstreamApi(new string[] { Configuration["ServiceApis:weatherApi:weatherApiScope"] })
+                .AddInMemoryTokenCaches();
+
+            services.AddControllersWithViews();
+
+            services.AddRazorPages().AddMicrosoftIdentityUI();
+
+            services.AddOptions();
+            services.Configure<OpenIdConnectOptions>(Configuration.GetSection("Azure:AzureAdB2C"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,11 +57,13 @@ namespace WebPortal
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
