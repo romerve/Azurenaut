@@ -4,6 +4,6 @@
 
 ## Todo
 
-- [ ] Bicep deployment
+- [ ] SQL Bicep deployment
+- [ ] Bicep network config
 - [ ] Improve documentation :) 
-- [ ] TBD
