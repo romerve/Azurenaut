@@ -6,7 +6,7 @@ name: CI Container App
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ 9-cloudnative-fusionteams ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -39,7 +39,12 @@ jobs:
         uses: Azure/login@v1.4.4
         with:
           creds: ${{ secrets.RVLABS_AZURE_CREDENTIALS }}
-          
+      
+      - name: Current Dir
+        run: |
+          ls -al
+          pwd
+        
       - name: Run a multi-line script
         run: |
           az deployment group create \
