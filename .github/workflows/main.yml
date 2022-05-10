@@ -24,16 +24,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-
+      # Azure login via SP
       - name: Azure Login
         uses: Azure/login@v1.4.4
         with:
@@ -44,4 +35,11 @@ jobs:
         with:
           # Specify the script here
           inlineScript: |
-            az account show
+            az deployment group create \
+              -g ${{ RVLABS_AZ_DEV_RG }} \
+              -f ./${{ RVLABS_AZ_DEV_HWAPP }} \
+              -p \
+                environment_name="${{ RVLABS_AZ_DEV_ENV_NAME }}" \
+                location="${{ RVLABS_AZ_DEV_LOCATION }}" \
+                storage_account_name="${{ RVLABS_AZ_DEV_STORAGE }}" \
+                storage_container_name="${{ RVLABS_AZ_DEV_STORAGE_CONTAINER }}"
