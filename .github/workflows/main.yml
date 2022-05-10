@@ -30,10 +30,11 @@ jobs:
         with:
           creds: ${{ secrets.RVLABS_AZURE_CREDENTIALS }}
           
-      
-          
-      - name: Run a multi-line script
-        run: |
+      - name: Azure CLI Action
+        uses: Azure/cli@v1.0.6
+        with:
+          # Specify the script here
+          inlineScript: |
             az deployment group create \
               -g ${{ secrets.RVLABS_AZ_DEV_RG }} \
               -f ./${{ secrets.RVLABS_AZ_DEV_HWAPP }} \
