@@ -10,6 +10,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      bicepFile:
+        description: 'IaC Bicep'     
+        required: true
+        default: 'main.bicep'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,7 +39,7 @@ jobs:
         run: |
           az deployment group create \
             -g ${{ secrets.RVLABS_AZ_DEV_RG }} \
-            -f ./${{ secrets.RVLABS_AZ_DEV_HWAPP }} \
+            -f ./${{ github.event.inputs.bicepFile }} \
             -p \
               environment_name="${{ secrets.RVLABS_AZ_DEV_ENV_NAME }}" \
               location="${{ secrets.RVLABS_AZ_DEV_LOCATION }}" \
