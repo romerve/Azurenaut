@@ -36,10 +36,10 @@ jobs:
           # Specify the script here
           inlineScript: |
             az deployment group create \
-              -g ${{ RVLABS_AZ_DEV_RG }} \
-              -f ./${{ RVLABS_AZ_DEV_HWAPP }} \
+              -g ${{ secrets.RVLABS_AZ_DEV_RG }} \
+              -f ./${{ secrets.RVLABS_AZ_DEV_HWAPP }} \
               -p \
-                environment_name="${{ RVLABS_AZ_DEV_ENV_NAME }}" \
-                location="${{ RVLABS_AZ_DEV_LOCATION }}" \
-                storage_account_name="${{ RVLABS_AZ_DEV_STORAGE }}" \
-                storage_container_name="${{ RVLABS_AZ_DEV_STORAGE_CONTAINER }}"
+                environment_name="${{ secrets.RVLABS_AZ_DEV_ENV_NAME }}" \
+                location="${{ secrets.RVLABS_AZ_DEV_LOCATION }}" \
+                storage_account_name="${{ secrets.RVLABS_AZ_DEV_STORAGE }}" \
+                storage_container_name="${{ secrets.RVLABS_AZ_DEV_STORAGE_CONTAINER }}"
