@@ -24,12 +24,12 @@ on:
 env:
   AZURE_FUNCTIONAPP_NAME: ${{ github.event.inputs.function_name }}  # set this to your application's name
   AZURE_FUNCTIONAPP_PACKAGE_PATH: ${{ github.event.inputs.function_path }}    # set this to the path to your web app project, defaults to the repository root
-  DOTNET_VERSION: '6'              # set this to the dotnet version to use
+  DOTNET_VERSION: '6.0.x'              # set this to the dotnet version to use
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  DeployAzureFunction:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     environment: rvlabs-dev-env
@@ -48,9 +48,10 @@ jobs:
           creds: ${{ secrets.RVLABS_AZURE_CREDENTIALS }}
           
       - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v2.1.0
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
+          include-prerelease: true
 
       - name: 'Resolve Project Dependencies Using Dotnet'
         shell: bash
