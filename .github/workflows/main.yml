@@ -6,7 +6,7 @@ name: CI Container App
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ 9-cloudnative-fusionteams ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,7 +22,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  AzureContainerApp:
     # The type of runner that the job will run on
     environment: rvlabs-dev-env
     runs-on: ubuntu-latest
@@ -39,13 +39,8 @@ jobs:
         uses: Azure/login@v1.4.4
         with:
           creds: ${{ secrets.RVLABS_AZURE_CREDENTIALS }}
-      
-      - name: Current Dir
-        run: |
-          ls -al
-          pwd
         
-      - name: Run a multi-line script
+      - name: Azure Bicep Deploy
         run: |
           az deployment group create \
             -g ${{ secrets.RVLABS_AZ_DEV_RG }} \
