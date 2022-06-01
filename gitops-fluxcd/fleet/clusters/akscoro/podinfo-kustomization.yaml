@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m0s
-  path: ./gitops-fluxcd/fleet/clusters/akscoro/podinfo-kustomization.yaml
+  path: ./kustomize
   prune: true
   sourceRef:
     kind: GitRepository
