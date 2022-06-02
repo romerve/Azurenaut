@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sample
+  namespace: sample
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu:latest
+    command:
+    - tail
+    - -f
+    - /dev/null
