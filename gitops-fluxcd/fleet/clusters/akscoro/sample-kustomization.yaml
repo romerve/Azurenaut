@@ -1,0 +1,15 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: sample
+  namespace: coro-config
+spec:
+  interval: 2m0s
+  path: ./gitops-fluxcd/fleet/apps/sample
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: coro-config
+  targetNamespace: sample-dev
+

@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: sample
-  namespace: sample
+  namespace: sample-dev
 spec:
   containers:
   - name: ubuntu
