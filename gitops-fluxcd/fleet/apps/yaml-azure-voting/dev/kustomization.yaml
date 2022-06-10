@@ -3,6 +3,5 @@ kind: Kustomization
 resources:
   - dev-ns.yaml
   - ../base
-namePrefix: ya-
 patchesStrategicMerge:
   - voting-patch.yaml
