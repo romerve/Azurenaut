@@ -6,6 +6,6 @@ metadata:
   namespace: coro-config
 spec:
   interval: 30m0s
-  type: "oci"
+  type: oci
   url: oci://rvlabs.azurecr.io
 
