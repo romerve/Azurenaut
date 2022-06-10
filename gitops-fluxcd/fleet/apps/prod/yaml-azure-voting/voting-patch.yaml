@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-vote-front
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        environemnt: prod
+    spec:
+      containers:
+      - name: azure-vote-front
+        image: rvlabs.azurecr.io/azure-vote-front:v1
