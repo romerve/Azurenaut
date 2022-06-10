@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
   - azure-voting.yaml
 namePrefix: ya-
+commonLabels:
+  apptype: yaml
