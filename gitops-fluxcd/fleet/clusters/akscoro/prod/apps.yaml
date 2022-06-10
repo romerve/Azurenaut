@@ -8,7 +8,7 @@ spec:
   interval: 5m0s
   dependsOn:
     - name: infra
-  path: ./gitops-fluxcd/fleet/apps/prod
+  path: ./gitops-fluxcd/fleet/apps/yaml-azure-voting/prod
   prune: true
   sourceRef:
     kind: GitRepository
