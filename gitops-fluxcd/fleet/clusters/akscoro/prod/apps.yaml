@@ -2,12 +2,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: apps
+  name: apps-prod
   namespace: coro-config
 spec:
   interval: 5m0s
   dependsOn:
-    - name: infra
+    - name: infra-prod
   path: ./gitops-fluxcd/fleet/apps/yaml-azure-voting/prod
   prune: true
   sourceRef:

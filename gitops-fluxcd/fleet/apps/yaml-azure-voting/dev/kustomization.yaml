@@ -6,3 +6,5 @@ resources:
   - ../base
 patchesStrategicMerge:
   - voting-patch.yaml
+commonLabels:
+  appenv: dev
