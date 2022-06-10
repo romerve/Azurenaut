@@ -4,6 +4,6 @@ kind: HelmRepository
 metadata:
   name: rvlabscr
 spec:
-  interval: 5m0s
-  type: oci
+  type: "oci"
+  interval: 5m
   url: oci://rvlabs.azurecr.io
