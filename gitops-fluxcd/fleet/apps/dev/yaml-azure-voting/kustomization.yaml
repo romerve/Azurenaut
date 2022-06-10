@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: dev-azurenaut
 resources:
   - dev-ns.yaml
-  - ../../base
+  - ../../base/yaml-azure-voting
 patchesStrategicMerge:
   - voting-patch.yaml
 commonLabels:
