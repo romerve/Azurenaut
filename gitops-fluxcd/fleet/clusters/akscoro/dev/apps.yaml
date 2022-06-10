@@ -6,6 +6,8 @@ metadata:
   namespace: coro-config
 spec:
   interval: 5m0s
+  dependsOn:
+    - name: infra
   path: ./gitops-fluxcd/fleet/apps/dev
   prune: true
   sourceRef:
