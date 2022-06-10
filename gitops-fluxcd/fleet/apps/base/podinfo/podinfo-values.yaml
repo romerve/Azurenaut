@@ -1,4 +1,3 @@
----
 cache: tcp://redis-master.redis:6379
 ingress:
   enabled: true
