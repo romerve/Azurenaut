@@ -15,7 +15,7 @@ redis:
     enabled: false
 
 image:
-  repository: myhelmacr.azurecr.io/azure-vote-front
+  repository: rvlabs.azurecr.io/azure-vote-front
   pullPolicy: IfNotPresent
   tag: "v1"
 
