@@ -15,9 +15,9 @@ redis:
     enabled: false
 
 image:
-  repository: rvlabs.azurecr.io/azure-vote-front
+  repository: rvlabs.azurecr.io/rvl/azure-vote-front
   pullPolicy: IfNotPresent
-  tag: "v1.1"
+  tag: "0.1.1"
 
 imagePullSecrets: []
 nameOverride: ""
