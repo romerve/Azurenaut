@@ -5,4 +5,5 @@ metadata:
   name: rvlabscr
 spec:
   interval: 5m
-  url: https://rvlabs.azurecr.io/helm/v1/repo 
+  type: "oci"
+  url: oci://rvlabs.azurecr.io/helm/v1/repo 
