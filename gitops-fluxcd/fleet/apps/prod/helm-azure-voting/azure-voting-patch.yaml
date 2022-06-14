@@ -1,0 +1,12 @@
+kind: HelmRelease
+metadata:
+  name: azure-vote-front
+  namespace: prod-helm-azurenaut
+spec:
+  chart:
+    spec:
+      version: ">=0.1.1"
+  test:
+    enable: false
+  values:
+    replicaCount: 3
