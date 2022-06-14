@@ -1,6 +1,6 @@
 kind: HelmRelease
 metadata:
-  name: azure-vote-front
+  name: helm-azure-voting
   namespace: dev-helm-azurenaut
 spec:
   chart:
