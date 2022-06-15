@@ -7,3 +7,5 @@ spec:
   interval: 5m
   type: "oci"
   url: oci://rvlabs.azurecr.io
+  secretRef:
+    name: rvlabsacr
