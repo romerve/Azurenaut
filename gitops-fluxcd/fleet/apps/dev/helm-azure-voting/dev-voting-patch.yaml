@@ -7,7 +7,7 @@ spec:
     spec:
       sourceRef:
         kind: HelmRepository
-        name: rvlabscr
+        name: ghcr-charts
         namespace: coro-config
       version: '>=0.1.0'
   test:
@@ -15,5 +15,5 @@ spec:
   values:
     replicaCount: 1
     image:
-      repository: rvlabs.azurecr.io/rvl/azure-vote-front
+      repository: ghcr.io/charts/azure-voting
       tag: "0.1.1"
