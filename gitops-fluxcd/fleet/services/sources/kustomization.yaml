@@ -4,4 +4,4 @@ namespace: coro-config
 resources:
   - bitnami.yaml
   - rvlabscr.yaml
-  
+  - ghcr.yaml

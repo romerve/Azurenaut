@@ -5,8 +5,15 @@ metadata:
 spec:
   chart:
     spec:
-      version: ">=0.1.0"
+      sourceRef:
+        kind: HelmRepository
+        name: rvlabscr
+        namespace: coro-config
+      version: '>=0.1.0'
   test:
     enable: false
   values:
     replicaCount: 1
+    image:
+      repository: rvlabs.azurecr.io/rvl/azure-vote-front
+      tag: "0.1.1"
