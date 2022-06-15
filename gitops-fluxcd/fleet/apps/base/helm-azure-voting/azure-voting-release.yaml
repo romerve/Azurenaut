@@ -6,7 +6,7 @@ metadata:
 spec:
   chart:
     spec:
-      chart: azure-voting
+      chart: charts/azure-voting
       reconcileStrategy: Revision
       sourceRef:
         kind: HelmRepository
