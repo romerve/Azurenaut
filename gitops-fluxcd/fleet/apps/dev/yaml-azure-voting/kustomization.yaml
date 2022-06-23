@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: dev-azurenaut
+resources:
+  - dev-ns.yaml
+  - ../../base/yaml-azure-voting
+patchesStrategicMerge:
+  - voting-patch.yaml
+commonLabels:
+  appenv: dev-yaml

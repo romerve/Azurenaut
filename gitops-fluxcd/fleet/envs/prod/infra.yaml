@@ -1,0 +1,14 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: infra-prod
+  namespace: coro-config
+spec:
+  interval: 5m0s
+  path: ./gitops-fluxcd/fleet/infra
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: azurenaut
+

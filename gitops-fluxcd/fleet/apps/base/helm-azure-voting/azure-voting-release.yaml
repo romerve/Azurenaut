@@ -1,0 +1,17 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: helm-azure-voting
+spec:
+  chart:
+    spec:
+      chart: azure-voting
+      reconcileStrategy: Revision
+      sourceRef:
+        kind: HelmRepository
+        name: rvlabscr
+        namespace: coro-config
+      version: '>=0.1.0'
+  interval: 3m0s
+

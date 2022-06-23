@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: dev-helm-azurenaut
+resources:
+  - dev-ns.yaml
+  - ../../base/helm-azure-voting
+patchesStrategicMerge:
+  - dev-voting-patch.yaml
+commonLabels:
+  appenv: dev-helm
