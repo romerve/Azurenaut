@@ -13,7 +13,7 @@
                 <mxCell id="47" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="152.5" y="130" width="292.5" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="50" value="https://portal.cardonlabs.dev&lt;br&gt;/portal&lt;br&gt;/apis&lt;br&gt;/*" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=-0.037;entryY=0.488;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#F0F0F0;" parent="1" source="2" target="5" edge="1">
+                <mxCell id="50" value="&lt;span style=&quot;background-color: rgb(42 , 42 , 42)&quot;&gt;https://portal.cardonlabs.dev&lt;br&gt;/portal&lt;br&gt;/apis&lt;br&gt;/*&lt;/span&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=-0.037;entryY=0.488;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#F0F0F0;" parent="1" source="2" target="5" edge="1">
                     <mxGeometry x="0.0048" y="-10" relative="1" as="geometry">
                         <mxPoint x="1" as="offset"/>
                     </mxGeometry>
@@ -87,7 +87,7 @@
                 <mxCell id="9" value="Kye Vault" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/security/Key_Vaults.svg;" parent="1" vertex="1">
                     <mxGeometry x="760" y="402" width="40" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="KV Certificate&lt;br&gt;Sub=portal.cardonlabs.dev&lt;br&gt;DNS=portal.cardonlabs.dev&lt;br&gt;Type=Non-integrated CA" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/app_services/App_Service_Certificates.svg;labelBackgroundColor=none;" parent="1" vertex="1">
+                <mxCell id="13" value="&lt;span style=&quot;background-color: rgb(42 , 42 , 42)&quot;&gt;KV Certificate&lt;br&gt;Sub=portal.cardonlabs.dev&lt;br&gt;DNS=portal.cardonlabs.dev&lt;br&gt;Type=Non-integrated CA&lt;/span&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/app_services/App_Service_Certificates.svg;labelBackgroundColor=none;" parent="1" vertex="1">
                     <mxGeometry x="960" y="408.3" width="30" height="27.4" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="" style="group" parent="1" vertex="1" connectable="0">
