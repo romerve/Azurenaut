@@ -13,7 +13,7 @@
                 <mxCell id="47" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;strokeWidth=2;" parent="1" vertex="1">
                     <mxGeometry x="152.5" y="130" width="292.5" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="50" value="https://portal.cardonlabs.dev&lt;br&gt;/portal&lt;br&gt;/apis" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=-0.037;entryY=0.488;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#F0F0F0;" parent="1" source="2" target="5" edge="1">
+                <mxCell id="50" value="https://portal.cardonlabs.dev&lt;br&gt;/portal&lt;br&gt;/apis&lt;br&gt;/*" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=-0.037;entryY=0.488;entryDx=0;entryDy=0;entryPerimeter=0;labelBackgroundColor=none;strokeColor=#F0F0F0;" parent="1" source="2" target="5" edge="1">
                     <mxGeometry x="0.0048" y="-10" relative="1" as="geometry">
                         <mxPoint x="1" as="offset"/>
                     </mxGeometry>
@@ -174,19 +174,19 @@
                 <mxCell id="8" value="Self-signed Certificate&amp;nbsp;&lt;br&gt;server-ss-cert&lt;br&gt;CN=portal.cardonlabs.dev" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/app_services/App_Service_Certificates.svg;" parent="1" vertex="1">
                     <mxGeometry x="830" y="688.61" width="30" height="27.4" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" style="edgeStyle=none;html=1;entryX=0;entryY=0.495;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="11" target="3" edge="1">
+                <mxCell id="18" style="edgeStyle=none;html=1;entryX=0;entryY=0.495;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#F0F0F0;" parent="1" source="11" target="3" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="Root CA&lt;br&gt;CSR" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/management_governance/Compliance.svg;" parent="1" vertex="1">
                     <mxGeometry x="575" y="690.005" width="20" height="24.61" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" style="edgeStyle=none;html=1;entryX=0.017;entryY=0.485;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="12" target="11" edge="1">
+                <mxCell id="17" style="edgeStyle=none;html=1;entryX=0.017;entryY=0.485;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#F0F0F0;" parent="1" source="12" target="11" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="12" value="Root Key" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/management_governance/Compliance.svg;" parent="1" vertex="1">
                     <mxGeometry x="485" y="690.005" width="20" height="24.61" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" style="edgeStyle=none;html=1;entryX=-0.017;entryY=0.501;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="15" target="12" edge="1">
+                <mxCell id="16" style="edgeStyle=none;html=1;entryX=-0.017;entryY=0.501;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#F0F0F0;" parent="1" source="15" target="12" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="77" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;startArrow=none;startFill=0;endArrow=classic;endFill=1;strokeColor=#FFFFFF;entryX=0.483;entryY=0.981;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="24" target="3" edge="1">
