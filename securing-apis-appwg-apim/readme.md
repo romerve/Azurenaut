@@ -1,5 +1,8 @@
 # Securing web apps and APIs with End-to-End SSL using App Gateway, APIM, and App Service
 
+The overall solution will look as follows:
+![Solution](docassets/solution-diagram.svg)
+
 ## Scenario overview
 
 ## Making It Real (MIR)
