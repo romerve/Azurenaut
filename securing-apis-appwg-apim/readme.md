@@ -79,7 +79,7 @@ subjectAltName = @alt_names
 DNS.1 = portal.cardonlabs.dev
 ```
 
-![MSR](docassets/kv-csrdown=cermerge.png)
+![MSR](docassets/kv-csrdown-cermerge.png)
 
 At this point you should have:
 
@@ -127,4 +127,4 @@ Once this is set, the Backend Health must show status as Healthy, otherwise the 
 
 ### Protecting APIs with Application Gateway and API Management
 
-TBD...
+TODO.. Work in progress.
