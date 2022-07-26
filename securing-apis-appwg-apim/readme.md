@@ -1,9 +1,20 @@
 # Securing web apps and APIs with End-to-End SSL using App Gateway, APIM, and App Service
 
-The overall solution will look as follows:
+During an architecture review, some questions came up about how to protect web apps with the [Microsoft Identity Platfom](https://docs.microsoft.com/en-us/azure/active-directory/develop/), which is a straight forward effort with minimal refactoring. However, managing and routing traffic to applications with a layer 7 load balancer it's a common requirement, and in Azure this is often addressed by deploying [Azure Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/overview). During integration of services, some challenges came up when working with OIDC redirect URL, custom domains, self-signed certificates, and url based routing.
+
+The final solution will consist of:
+
+- [Application Gateway](https://docs.microsoft.com/en-us/azure/application-gateway/overview)
+- [App Service](https://docs.microsoft.com/en-us/azure/app-service/overview)
+- [Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview)
+- [API Management](https://docs.microsoft.com/en-us/azure/api-management/api-management-key-concepts)
+
+The overall solution should look as follows:
 ![Solution](docassets/solution-diagram.svg)
 
 ## Scenario overview
+
+In this solution all traffic is ingested through Application Gateway to perform url based routing, and leverage end-to-end SSL
 
 ## Making It Real (MIR)
 
@@ -28,6 +39,7 @@ openssl ecparam -out root.key -name prime256v1 -genkey
 
 ```bash
 openssl req -new -sha256 -key root.key -out root.csr
+
 Country Name (2 letter code) []:                    US
 State or Province Name (full name) []:              Texas
 Locality Name (eg, city) []:                        Dallas
