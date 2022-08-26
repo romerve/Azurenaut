@@ -1,0 +1,28 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "containerAppName": {
+        "value": "sample-aca-rv1"
+      },
+      "environment": {
+        "value": "production"
+      },
+      "location": {
+        "value": "eastus"
+      },
+      "imageName": {
+        "value": "contosoapp-bluegreen"
+      },
+      "imageTag": {
+        "value": "082222-latest"
+      },
+      "appEnvVars": {
+        "value": {
+            "appBuildId": "221",
+            "appCommit": "commit shasd",
+            "appSlot": "slot-a"
+        }
+      }
+    }
+  }
