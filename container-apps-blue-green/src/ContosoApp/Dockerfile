@@ -12,6 +12,9 @@ RUN dotnet publish -c Release -o publish
 
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
+
+LABEL org.opencontainers.image.source=https://github.com/romerve/Azurenaut
+
 WORKDIR /source
 COPY --from=build /source/publish ./
 ENTRYPOINT ["dotnet", "ContosoApp.dll"]

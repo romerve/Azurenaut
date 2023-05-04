@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "containerAppName": {
+        "value": "appazna"
+      },
+      "containerImage": {
+        "value": "ghcr.io/romerve/contosoapp:v0.1"
+      },
+      "label": {
+        "value": "dev"
+      },
+      "appEnvVars": {
+        "value": {
+            "appBuildId": "151",
+            "appCommit": "commit shasd",
+            "appSlot": "staging"
+        }
+      }
+    }
+  }
