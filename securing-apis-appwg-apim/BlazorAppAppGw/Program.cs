@@ -8,32 +8,57 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Graph = Microsoft.Graph;
 using BlazorAppAppGw.Data;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var initialScopes = builder.Configuration["DownstreamApi:Scopes"]?.Split(' ');
 
-builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"))
-        .EnableTokenAcquisitionToCallDownstreamApi(initialScopes)
-            .AddMicrosoftGraph(builder.Configuration.GetSection("DownstreamApi"))
-            .AddInMemoryTokenCaches();
+var EnableAzureAuth = builder.Configuration.GetValue<bool>("AppParams:EnableAzureAuth");
+
+if (EnableAzureAuth)
+{
+    builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("AzureAd"))
+            .EnableTokenAcquisitionToCallDownstreamApi(initialScopes)
+                .AddMicrosoftGraph(builder.Configuration.GetSection("DownstreamApi"))
+                .AddInMemoryTokenCaches();
+
+    builder.Services.AddAuthorization(options =>
+    {
+        // By default, all incoming requests will be authorized according to the default policy
+        options.FallbackPolicy = options.DefaultPolicy;
+    });
+}
+
 builder.Services.AddControllersWithViews()
     .AddMicrosoftIdentityUI();
 
-builder.Services.AddAuthorization(options =>
-{
-    // By default, all incoming requests will be authorized according to the default policy
-    options.FallbackPolicy = options.DefaultPolicy;
-});
+
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor()
     .AddMicrosoftIdentityConsentHandler();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<WeatherForecastService>();
 
+if (builder.Configuration.GetValue<string>("AppParams:XForwardedHostHeaderName") != null)
+{
+    builder.Services.Configure<ForwardedHeadersOptions>(options => {
+        options.ForwardedHeaders =
+            ForwardedHeaders.XForwardedFor |
+            ForwardedHeaders.XForwardedProto |
+            ForwardedHeaders.XForwardedHost;
+
+        options.ForwardedHostHeaderName = builder.Configuration.GetValue<string>("AppParams:XForwardedHostHeaderName");
+
+    });
+}
+
+
 var app = builder.Build();
+app.UseForwardedHeaders();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -49,8 +74,11 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication();
-app.UseAuthorization();
+if (EnableAzureAuth)
+{
+    app.UseAuthentication();
+    app.UseAuthorization();
+}
 
 app.MapControllers();
 app.MapBlazorHub();
