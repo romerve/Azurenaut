@@ -10,7 +10,7 @@ The final solution will consist of:
 - [API Management](https://docs.microsoft.com/en-us/azure/api-management/api-management-key-concepts)
 
 The overall solution should look as follows:
-![Solution](docassets/e2e-ssl-appgateway-appservice.dio.svg)
+![Solution](docassets/e2e-ssl-appgateway-appservice.dio.png)
 
 ## Scenario overview
 
